@@ -21,9 +21,10 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'please provide a password...🚚'],
         minlength: 6,
     }
-}) 
+})
 //using function not arrow one cuz this is scoped to the file
-UserSchema.pre('save', async function(next) {
+//pre is mongoose middleware
+UserSchema.pre('save', async function (next) {
     const salt = await bcrypt.genSalt(10)
     this.password = await bcrypt.hash(this.password, salt)
     next()
