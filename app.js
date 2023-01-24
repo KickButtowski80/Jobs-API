@@ -7,13 +7,13 @@ const jobsRouter = require('./routes/jobs')
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
-
+const authenticateUser = require('./middleware/authentication')
 app.use(express.json());
 
 const connectDB = require('./db/connect')
 
 app.use('/api/v1/auth', authRouter)
-app.use('/api/v1/jobs', jobsRouter)
+app.use('/api/v1/jobs',authenticateUser, jobsRouter)
 
 
 // routes
@@ -31,7 +31,7 @@ const start = async () => {
     await connectDB(process.env.MONGO_URI)
     console.log('db is connected...🔌')
     app.listen(port, () =>
-      console.log(`Server is listening 📻 on port ${port}... 🚀`)
+      console.log(`Server is listening 📻 on port ${port}...🚀`)
     );
   } catch (error) {
     console.log(error);
