@@ -7,7 +7,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "dev": "node app.js"
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.2",
     "swagger-ui-express": "^4.1.6",
+    "vercel": "^28.14.1",
     "xss-clean": "^0.1.1",
     "yamljs": "^0.3.0"
   },
