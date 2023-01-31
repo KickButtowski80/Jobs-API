@@ -10,14 +10,14 @@ const rateLimiter = require('express-rate-limit')
 const express = require('express');
 const app = express();
 
-app.set('trust proxy', 1)
-app.use(rateLimiter({
-  windowsMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
-}))
-app.use(helmet());
-app.use(cors())
-app.use(xss())
+// app.set('trust proxy', 1)
+// app.use(rateLimiter({
+//   windowsMs: 15 * 60 * 1000, // 15 minutes
+//   max: 100, // limit each IP to 100 requests per windowMs
+// }))
+// app.use(helmet());
+// app.use(cors())
+// app.use(xss())
 
 const authRouter = require('./routes/auth')
 const jobsRouter = require('./routes/jobs')
@@ -35,7 +35,7 @@ app.use('/api/v1/jobs', authenticateUser, jobsRouter)
 
 
 // routes
-app.get('/jobs', (req, res) => {
+app.get('/jobs-api', (req, res) => {
   res.send('jobs api 👏');
 });
 
