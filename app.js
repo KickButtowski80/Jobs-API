@@ -5,7 +5,7 @@ require('express-async-errors');
 const helmet = require('helmet')
 const cors = require('cors')
 const xss = require('xss-clean')
-const rateLimiter = require('express-rate-limiter')
+const rateLimiter = require('express-rate-limit')
 
 const express = require('express');
 const app = express();
@@ -35,7 +35,7 @@ app.use('/api/v1/jobs', authenticateUser, jobsRouter)
 
 
 // routes
-app.get('/', (req, res) => {
+app.get('/jobs', (req, res) => {
   res.send('jobs api 👏');
 });
 
