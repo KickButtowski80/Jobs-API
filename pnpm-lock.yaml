@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@vercel/node': ^2.8.17
   bcryptjs: ^2.4.3
   cors: ^2.8.5
   dotenv: ^10.0.0
@@ -19,6 +20,7 @@ specifiers:
   yamljs: ^0.3.0
 
 dependencies:
+  '@vercel/node': 2.8.17
   bcryptjs: 2.4.3
   cors: 2.8.5
   dotenv: 10.0.0
