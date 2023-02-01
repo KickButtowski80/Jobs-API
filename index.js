@@ -30,9 +30,9 @@ const connectDB = require('./db/connect')
 app.use(express.json());
 
 
-// app.use('/api/v1/auth', authRouter)
-// app.use('/api/v1/jobs', authenticateUser, jobsRouter)
-app.use('/api/v1/jobs', jobsRouter)
+app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/jobs', authenticateUser, jobsRouter)
+
 
 // routes
 app.get('/jobs-api', (req, res) => {
