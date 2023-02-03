@@ -1,7 +1,7 @@
 #### Setup
 
 ```bash
-npm install && npm start
+pnpm install && pnpm start
 ```
 
 #### Database Connection
